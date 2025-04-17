@@ -41,16 +41,17 @@
       <a-image src="#image"></a-image>
 
     </a-marker>
-
+    <a-light type="ambient" color="#ffffff" intensity="1"></a-light>
     <!-- ④-2 オリジナルマーカーを追加  -->
     <!-- アバター表示用のマーカー -->
       <a-marker type='pattern' url='asset/pattern-qr-code.patt'>
 
         <!-- animation-mixer を使ってGLBのアニメーションを再生 -->
         <a-entity 
-          gltf-model="#vroid" >
-        </a-entity>
-
+        gltf-model="#vroid"
+        animation-mixer>
+      </a-entity>
+      
       </a-marker>
 
 
