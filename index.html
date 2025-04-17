@@ -17,7 +17,7 @@
     <a-assets>
       <!-- <a-asset-item id="obj" src="asset/ramen.obj"></a-asset-item>
       <a-asset-item id="mtl" src="asset/ramen.mtl"></a-asset-item> -->
-      <a-asset-item id="vroid" src="asset/AvatarSample_M.glb"></a-asset-item>
+      <a-asset-item id="vroid" src="asset/untitled.glb"></a-asset-item>
       <img id="image" src="asset/image.png">
     </a-assets>
 
@@ -43,17 +43,19 @@
     </a-marker>
 
     <!-- ④-2 オリジナルマーカーを追加  -->
-    <a-marker type='pattern' url='asset/pattern-qr-code.patt'>
+    <!-- アバター表示用のマーカー -->
+      <a-marker type='pattern' url='asset/pattern-qr-code.patt'>
 
-      <!-- ⑤-1 ボールオブジェクトを追加 -->
-      <!-- <a-sphere scale=".25 .25 .25" position="0 .5 0" color="#f00">
-        <a-animation attribute="position" to="0 1 0" direction="alternate" dur="2000" repeat="indefinite"></a-animation>
-      </a-sphere> -->
+        <!-- animation-mixer を使ってGLBのアニメーションを再生 -->
+        <a-entity 
+          gltf-model="#vroid" 
+          animation-mixer="clip: humanoid; loop: repeat; timeScale: 1;"
 
-      <!-- ⑤-2 VRMファイルを追加 -->
-      <a-gltf-model src="#vroid"></a-gltf-model>
+          scale="1 1 1">
+        </a-entity>
 
-    </a-marker>
+      </a-marker>
+
 
     <!-- ⑥ カメラを追加 -->
     <a-entity camera></a-entity>
